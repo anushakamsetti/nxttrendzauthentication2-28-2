@@ -1,3 +1,9 @@
+import {Component} from 'react'
+
+import ActiveEventRegistrationDetails from '../ActiveEventRegistrationDetails'
+import EventItem from '../EventItem'
+import './index.css'
+
 const eventsList = [
   {
     id: 'f9bb2373-b80e-46b8-8219-f07217b9f3ce',
@@ -68,7 +74,7 @@ class Events extends Component {
     this.setState({activeEventId: id})
   }
 
-  renderEventList = () => {
+  renderEventsList = () => {
     const {activeEventId} = this.state
     return (
       <ul className="events-list">
@@ -89,7 +95,7 @@ class Events extends Component {
       <div className="events-container">
         <div className="events-content">
           <h1 className="heading">Events</h1>
-          {this.renderEventList()}
+          {this.renderEventsList()}
         </div>
         <ActiveEventRegistrationDetails
           activeEventRegistrationStatus={this.getActiveEventRegistrationStatus()}
@@ -98,5 +104,4 @@ class Events extends Component {
     )
   }
 }
-
 export default Events
